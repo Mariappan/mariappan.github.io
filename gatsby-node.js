@@ -7,7 +7,7 @@ const pageTypeRegex = /src\/(.*?)\//
 const getType = node => node.fileAbsolutePath.match(pageTypeRegex)[1]
 
 const pageTemplate = path.resolve(`./src/templates/page.js`)
-const indexTemplate = path.resolve(`./src/templates/index.js`)
+const postsTemplate = path.resolve(`./src/templates/posts.js`)
 const tagsTemplate = path.resolve(`./src/templates/tags.js`)
 
 exports.createPages = ({ actions, graphql, getNodes }) => {
@@ -64,9 +64,9 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     paginate({
       createPage,
       items: posts,
-      component: indexTemplate,
+      component: postsTemplate,
       itemsPerPage: siteMetadata.postsPerPage,
-      pathPrefix: '/',
+      pathPrefix: '/posts',
     })
 
     // Create each markdown page and post

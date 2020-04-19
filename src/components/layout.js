@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
           logoText
           defaultTheme
           copyrights
+          copyrightYear
           mainMenu {
             title
             path
@@ -39,6 +40,7 @@ const Layout = ({ children }) => {
     showMenuItems,
     menuMoreText,
     copyrights,
+    copyrightYear
   } = data.site.siteMetadata
 
   return (
@@ -53,7 +55,7 @@ const Layout = ({ children }) => {
         menuMoreText={menuMoreText}
       />
       <div className="content">{children}</div>
-      <Footer copyrights={copyrights} />
+      <Footer copyrights={copyrights} copyrightYear={copyrightYear}/>
     </div>
   )
 }

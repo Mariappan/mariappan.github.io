@@ -10,6 +10,7 @@ module.exports = {
     title: `Maari - Personal Blog`,
     description: `Blog mostly about networking, embedded etc.`,
     copyrights: 'Mariappan Ramasamy',
+    copyrightYear: '2020',
     author: `@maari`,
     logo: {
       src: '',
@@ -18,21 +19,17 @@ module.exports = {
     logoText: 'Maari Ram',
     defaultTheme: 'dark',
     postsPerPage: 5,
-    showMenuItems: 2,
-    menuMoreText: 'Show more',
+    showMenuItems: 3,
+    menuMoreText: '...',
     mainMenu: [
+      {
+        title: 'Posts',
+        path: '/posts',
+      },
       {
         title: 'About',
         path: '/about',
-      },
-      {
-        title: 'Showcase',
-        path: '/showcase',
-      },
-      {
-        title: 'Example',
-        path: '/example',
-      },
+      }
     ],
   },
   plugins: [

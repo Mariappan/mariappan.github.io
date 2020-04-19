@@ -1,16 +1,12 @@
 {
-  "name": "gatsby-starter-hello-friend",
-  "description": "A simple starter for Gatsby. That's it.",
-  "version": "0.2.0",
-  "author": "Radek Kozieł <radoslaw.koziel@gmail.com>",
+  "name": "mariappan.github.io",
+  "description": "Personal Blog of an Engineer.",
+  "version": "0.0.1",
+  "author": "Mariappan Ramasamy <mramasam@outlook.com>",
   "keywords": [
-    "gatsby",
-    "minimal",
-    "starter",
+    "networking",
+    "embedded",
     "blog",
-    "theme",
-    "dark",
-    "light",
     "personal site"
   ],
   "license": "MIT",
@@ -67,9 +63,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/panr/gatsby-starter-hello-friend"
-  },
-  "bugs": {
-    "url": "https://github.com/panr/gatsby-starter-hello-friend/issues"
+    "url": "https://github.com/Mariappan/mariappan.github.io"
   }
 }
