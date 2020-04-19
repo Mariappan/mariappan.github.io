@@ -17,7 +17,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby clean && gatsby develop",
-    "deploy": "gatsby build && gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
