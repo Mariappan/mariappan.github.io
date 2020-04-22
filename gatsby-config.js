@@ -18,6 +18,7 @@ module.exports = {
     },
     logoText: 'Maari Ram',
     defaultTheme: 'dark',
+    notesPerPage: 5,
     postsPerPage: 5,
     showMenuItems: 3,
     menuMoreText: '...',
@@ -27,6 +28,10 @@ module.exports = {
         path: '/posts',
       },
       {
+        title: 'Notes',
+        path: '/notes',
+      },
+      {
         title: 'About',
         path: '/about',
       }
@@ -34,6 +39,7 @@ module.exports = {
   },
   plugins: [
     `babel-preset-gatsby`,
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -54,6 +60,13 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `notes`,
+        path: `${__dirname}/src/notes`,
       },
     },
     {
@@ -111,8 +124,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-hello-friend`,
-        short_name: `hello-friend`,
+        name: `PingaDev`,
+        short_name: `PingaDev`,
         start_url: `/`,
         background_color: `#292a2d`,
         theme_color: `#292a2d`,

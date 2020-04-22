@@ -246,7 +246,7 @@ button, input, textarea {
   flex-direction: column;
   flex: 1 0 auto;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 50px auto;
   width: 100%;
   max-width: 800px;;

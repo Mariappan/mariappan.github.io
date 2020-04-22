@@ -7,6 +7,7 @@ const pageTypeRegex = /src\/(.*?)\//
 const getType = node => node.fileAbsolutePath.match(pageTypeRegex)[1]
 
 const pageTemplate = path.resolve(`./src/templates/page.js`)
+const notesTemplate = path.resolve(`./src/templates/notes.js`)
 const postsTemplate = path.resolve(`./src/templates/posts.js`)
 const tagsTemplate = path.resolve(`./src/templates/tags.js`)
 
@@ -34,6 +35,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
       site {
         siteMetadata {
           postsPerPage
+          notesPerPage
         }
       }
     }
@@ -67,6 +69,20 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
       component: postsTemplate,
       itemsPerPage: siteMetadata.postsPerPage,
       pathPrefix: '/posts',
+    })
+
+    const notes = allNodes.filter(
+      ({ internal, fileAbsolutePath }) =>
+        internal.type === 'MarkdownRemark' &&
+        fileAbsolutePath.indexOf('/notes/') !== -1,
+    )
+
+    paginate({
+      createPage,
+      items: notes,
+      component: notesTemplate,
+      itemsPerPage: siteMetadata.notesPerPage,
+      pathPrefix: '/notes',
     })
 
     // Create each markdown page and post
